@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+        <!-- 1) Dialecto de MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- 2) Driver JDBC -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- 3) URL de conexión -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/login_table?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">12345</property>
+
+        <!-- 4) Mostrar SQL en consola -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- 5) Estrategia de creación/actualización de tablas -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- 6) Registro de tu clase anotada -->
+        <mapping class="com.jhonny.inventario.model.Usuario"/>
+    </session-factory>
+
+</hibernate-configuration>
